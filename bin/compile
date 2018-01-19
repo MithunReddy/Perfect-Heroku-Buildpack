@@ -143,9 +143,14 @@ step install swift_ver $SWIFT_VER
     echo $(ls)
     gunzip -f /app/tmp/cache/swift-4.0.3-RELEASE-ubuntu16.04.tar.gz
 
+    . /app/tmp/cache/
+
+    tar -xf /app/tmp/cache/swift-4.0.3-RELEASE-ubuntu16.04.tar.gz || fail Extracting $1
+    rm  swift-4.0.3-RELEASE-ubuntu16.04.tar.gz
+
     #fetch $SWIFT_VER-ubuntu16.04.tar.gz
     #decomp $SWIFT_VER-ubuntu16.04.tar.gz
-     untar $SWIFT_VER-ubuntu16.04.tar.gz
+    #untar $SWIFT_VER-ubuntu16.04.tar.gz
     #rsync -Pa $CACHE_DIR/$SWIFT_VER-ubuntu16.04/ $CACHE_DIR/.test/ > $BUILD_DIR/build.log || fail Renaming Swift dir
     #rm -rf $CACHE_DIR/$SWIFT_VER-ubuntu16.04
 say Ok
