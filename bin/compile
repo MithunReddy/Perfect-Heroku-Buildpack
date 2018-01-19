@@ -15,6 +15,7 @@ function fail() {
   }
 
 function fetch() {
+    echo $URL/$1 
     wget -P $CACHE_DIR $URL/$1 2> /dev/null || fail Fetching $1
   }
 
