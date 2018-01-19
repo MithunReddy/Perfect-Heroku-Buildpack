@@ -59,14 +59,14 @@ pushd .
 
 step Checking stack
 
-say Ok.  Ubuntu 14.04 found
+#say Ok.  Ubuntu 14.04 found
 
 step Setting environment
 BUILD_DIR=$1
 CACHE_DIR=$2
 SCRIPT_VER=3
-SWIFT_VER="swift-4.0-RELEASE"
-SWIFT_VER_LC="swift-4.0-release"
+SWIFT_VER="swift-4.0.3-RELEASE"
+SWIFT_VER_LC="swift-4.0.3-release"
 #SWIFT_VER="swift-DEVELOPMENT-SNAPSHOT-2016-06-20-a"
 say Ok
 
@@ -129,11 +129,11 @@ step install swift_ver $SWIFT_VER
     #release build
     URL=https://swift.org/builds/$SWIFT_VER_LC/ubuntu1404/$SWIFT_VER
     #development build URL=https://swift.org/builds/development/ubuntu1404/$SWIFT_VER
-    fetch $SWIFT_VER-ubuntu14.04.tar.gz
-    decomp $SWIFT_VER-ubuntu14.04.tar.gz
-    untar $SWIFT_VER-ubuntu14.04.tar
-    rsync -Pa $CACHE_DIR/$SWIFT_VER-ubuntu14.04/ $CACHE_DIR/.test/ > $BUILD_DIR/build.log || fail Renaming Swift dir
-    rm -rf $CACHE_DIR/$SWIFT_VER-ubuntu14.04
+    fetch $SWIFT_VER-ubuntu16.04.tar.gz
+    decomp $SWIFT_VER-ubuntu16.04.tar.gz
+    untar $SWIFT_VER-ubuntu16.04.tar.gz
+    rsync -Pa $CACHE_DIR/$SWIFT_VER-ubuntu16.04/ $CACHE_DIR/.test/ > $BUILD_DIR/build.log || fail Renaming Swift dir
+    rm -rf $CACHE_DIR/$SWIFT_VER-ubuntu16.04
 say Ok
 
 step Install Swift into BuildDir
