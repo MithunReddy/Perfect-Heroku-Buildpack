@@ -129,7 +129,7 @@ grep -rl "prefix=/usr" $GREP_PATH | xargs sed -i 's|prefix=/usr|prefix=/app/.tes
 
 step install swift_ver $SWIFT_VER
     #release build
-    URL=https://swift.org/builds/$SWIFT_VER_LC/ubuntu1604/$SWIFT_VER/swift-4.0.3-RELEASE-ubuntu16.04.tar.gz
+    URL=https://swift.org/builds/$SWIFT_VER_LC/ubuntu1604/$SWIFT_VER/
     echo $URL
     #development build URL=https://swift.org/builds/development/ubuntu1604/$SWIFT_VER/
     #wget -P $CACHE_DIR https://swift.org/builds/swift-4.0.3-release/ubuntu1604/swift-4.0.3-RELEASE/
