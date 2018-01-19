@@ -129,7 +129,7 @@ step install swift_ver $SWIFT_VER
     #release build
     URL=https://swift.org/builds/$SWIFT_VER_LC/ubuntu1604/$SWIFT_VER
     echo $URL
-    #development build URL=https://swift.org/builds/development/ubuntu1604/$SWIFT_VER
+    #development build URL=https://swift.org/builds/development/ubuntu1604/$SWIFT_VER/swift-4.0.3-RELEASE-ubuntu16.04.tar.gz
     fetch $SWIFT_VER-ubuntu16.04.tar.gz
     decomp $SWIFT_VER-ubuntu16.04.tar.gz
     untar $SWIFT_VER-ubuntu16.04.tar.gz
