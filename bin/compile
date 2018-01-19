@@ -134,12 +134,14 @@ step install swift_ver $SWIFT_VER
     URL=https://swift.org/builds/$SWIFT_VER_LC/ubuntu1604/$SWIFT_VER
     echo $URL
     #development build URL=https://swift.org/builds/development/ubuntu1604/$SWIFT_VER/
-    #wget -P $CACHE_DIR https://swift.org/builds/swift-4.0.3-release/ubuntu1604/swift-4.0.3-RELEASE/
-    fetch $SWIFT_VER-ubuntu16.04.tar.gz
-    decomp $SWIFT_VER-ubuntu16.04.tar.gz
-    untar $SWIFT_VER-ubuntu16.04.tar.gz
-    rsync -Pa $CACHE_DIR/$SWIFT_VER-ubuntu16.04/ $CACHE_DIR/.test/ > $BUILD_DIR/build.log || fail Renaming Swift dir
-    rm -rf $CACHE_DIR/$SWIFT_VER-ubuntu16.04
+    . /app/tmp/cache/
+    wget https://swift.org/builds/swift-4.0.3-release/ubuntu1604/swift-4.0.3-RELEASE/swift-4.0.3-RELEASE-ubuntu16.04.tar.gz
+    echo $(ls)
+    #fetch $SWIFT_VER-ubuntu16.04.tar.gz
+    #decomp $SWIFT_VER-ubuntu16.04.tar.gz
+    #untar $SWIFT_VER-ubuntu16.04.tar.gz
+    #rsync -Pa $CACHE_DIR/$SWIFT_VER-ubuntu16.04/ $CACHE_DIR/.test/ > $BUILD_DIR/build.log || fail Renaming Swift dir
+    #rm -rf $CACHE_DIR/$SWIFT_VER-ubuntu16.04
 say Ok
 
 step Install Swift into BuildDir
