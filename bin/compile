@@ -49,9 +49,13 @@ function step() {
   }
 
 function untar() {
-    find $1
-    tar -C $CACHE_DIR -xf $CACHE_DIR/$1 || fail Extracting $1
-    rm -f $CACHE_DIR/$1
+    #find $1
+    #tar -C $CACHE_DIR -xf $CACHE_DIR/$1 || fail Extracting $1
+    #rm -f $CACHE_DIR/$1
+
+    find swift-4.0.3-RELEASE-ubuntu16.04.tar.gz
+    tar -C /app/tmp/cache/ -xf /app/tmp/cache/swift-4.0.3-RELEASE-ubuntu16.04.tar.gz || fail Extracting $1
+    rm -f /app/tmp/cache/swift-4.0.3-RELEASE-ubuntu16.04.tar.gz
   }
 
 function untar_rt() {
@@ -141,7 +145,7 @@ step install swift_ver $SWIFT_VER
 
     #fetch $SWIFT_VER-ubuntu16.04.tar.gz
     #decomp $SWIFT_VER-ubuntu16.04.tar.gz
-    #untar $SWIFT_VER-ubuntu16.04.tar.gz
+     untar $SWIFT_VER-ubuntu16.04.tar.gz
     #rsync -Pa $CACHE_DIR/$SWIFT_VER-ubuntu16.04/ $CACHE_DIR/.test/ > $BUILD_DIR/build.log || fail Renaming Swift dir
     #rm -rf $CACHE_DIR/$SWIFT_VER-ubuntu16.04
 say Ok
